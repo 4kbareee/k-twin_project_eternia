@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-Twin - Asisten AI Pengetahuan Organisasi</title>
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div id="app">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- Top bar: brand + action buttons in one row -->
+      <div class="sidebar-topbar">
+        <div class="brand-row">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" title="Menu">
+            <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+            <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+          <div class="brand">
+            <h2>K-<span>Twin</span></h2>
+            <p class="brand-sub">by Eternia Digital</p>
+          </div>
+        </div>
+        <!-- Sidebar Footer / Actions -->
+        <div class="sidebar-footer">
+          <a href="./presentation.html" class="deck-btn" title="Presentasi Bisnis (Pitch Deck)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h20v14H2z"/><path d="M8 21h8"/><path d="M12 17v4"/>
+            </svg>
+            <span>Pitch Deck 📊</span>
+          </a>
+          <button class="settings-btn" id="open-settings" title="API Settings">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+            <span>Pengaturan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Role Selector Section -->
+      <div class="sidebar-section">
+        <h3 class="section-title">PILIH PERAN AI</h3>
+        <div class="role-selector">
+          <button class="role-btn active" data-role="HR">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>HR (Human Resources)</span>
+          </button>
+          
+          <button class="role-btn" data-role="Teknisi">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            <span>Teknisi (Operasional)</span>
+          </button>
+          
+          <button class="role-btn" data-role="Finance">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <span>Finance (Keuangan)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- File Manager Section -->
+      <div class="sidebar-section file-manager">
+        <div class="section-header">
+          <h3 class="section-title">KNOWLEDGE FILES</h3>
+          <!-- File Input (Hidden) -->
+          <input type="file" id="file-input" accept=".pdf,.xlsx,.xls,.csv" style="display: none;" />
+          <button type="button" id="attach-btn" class="icon-btn-upload" title="Unggah File Pengetahuan">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span>Unggah</span>
+          </button>
+        </div>
+        <div id="file-list"></div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CHAT WORKSPACE -->
+    <div class="chat-workspace">
+      <header class="workspace-header">
+        <div class="active-status">
+          <div class="status-indicator-dot"></div>
+          <span class="active-role-text">K-Twin Workspace</span>
+        </div>
+      </header>
+
+      <!-- Quota Warning Banner -->
+      <div id="quota-warning" class="quota-banner">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+          <path d="M12 9v4"></path>
+          <path d="M12 17h.01"></path>
+        </svg>
+        <span>Kuota gratis habis. Silakan coba lagi dalam <strong id="retry-timer">--:--</strong></span>
+      </div>
+
+      <!-- Messages History Container -->
+      <div id="chat-container">
+        <div class="message bot-message" id="welcome-message">
+          Halo! Saya adalah **Knowledge Twin**. Pilih role (HR/Teknisi/Finance) dan unggah file terkait untuk mulai belajar.
+        </div>
+      </div>
+
+      <!-- Typing / Digestion Indicator -->
+      <div id="typing-indicator" class="typing">
+        <div class="typing-loader">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <span>Knowledge Twin sedang belajar...</span>
+      </div>
+
+      <!-- Input Area Form -->
+      <form id="input-area">
+        <input type="text" id="user-input" placeholder="Tanya tentang pekerjaan..." autocomplete="off" />
+        <button type="submit" id="send-btn">
+          <span>Kirim</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal-overlay">
+    <div class="modal">
+      <h2>Pengaturan API Key</h2>
+      <p>Masukkan Google AI API Key Anda. Anda bisa mendapatkannya di <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>.</p>
+      <input type="password" id="api-key-input" placeholder="AIza..." />
+      <div class="modal-actions">
+        <button class="btn-primary" id="save-settings">Simpan Pengaturan</button>
+        <div class="modal-actions-sub">
+          <button class="btn-secondary" id="close-settings">Batal</button>
+          <button id="clear-chat">Hapus Chat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
